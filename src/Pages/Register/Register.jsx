@@ -1,17 +1,47 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import { FaFacebook, FaGithub } from 'react-icons/fa6';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import learningImg from '../../assets/Book-Club-8-480p-4fa264dd-e035-unscreen.gif'
 
 const Register = () => {
+    const allTextare = {
+        initial: { opacity: 0 },
+        animate: {
+          opacity: 1,
+          transition: {
+            duration: 1,
+            delay: 0.5,
+            staggerChildren: 0.1,
+            delayChildren: 0.2,
+          },
+        },
+      };
+    
+      const wordsAre = {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+      };
+    
+      const text = 'Get One Free Month of EvoLearn Get More For New Registers';
+
     return (
         <div className='bg-slate-800 text-white pb-20' data-aos="zoom-in">
-            <div  className='text-center pt-14 pb-10'>
-                <h1 className='text-5xl font-bold'>Get <span className='text-blue-500
-                '>One Free Month</span> of EvoLearn </h1>
-                <p className='text-2xl'>Explore thousends of hands-on classes with one inspirng membership.</p>
-            </div>
+            <motion.div
+      variants={allTextare}
+      initial='initial'
+      animate='animate'
+      className='text-center pt-14 pb-10'
+    >
+      {text.split('').map((char, index) => (
+        <motion.span key={index} variants={wordsAre} className={`text-4xl font-bold ${char === ' ' ? 'ml-1' : ''}`}>
+          {char}
+        </motion.span>
+      ))}
+      <motion.p variants={wordsAre} className='text-2xl'>
+        Explore thousands of hands-on classes with one inspiring membership.
+      </motion.p>
+    </motion.div>
             <div className="hero">
   <div className="hero-content flex-col lg:flex-row-reverse gap-12">
     <div className="text-center lg:text-left" data-aos="zoom-out-down">
@@ -53,7 +83,7 @@ const Register = () => {
         </div>
         
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary">Register</button>
         </div>
         <div className="divider divider-accent text-black">Or</div>
         <div className="form-control mt-6">
