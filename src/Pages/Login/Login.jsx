@@ -11,7 +11,6 @@ const Login = () => {
                 <h1 className='text-5xl font-bold'>Get <span className='text-blue-500
                 '>One Free Month</span> of EvoLearn </h1>
                 <p className='text-2xl'>Explore thousends of hands-on classes with one inspirng membership.</p>
-                <h1 className="text-5xl font-bold pt-16 pb-10">Login Now</h1>
             </div>
             <div className="hero">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -22,6 +21,7 @@ const Login = () => {
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form className="card-body"  data-aos="fade-up"
      data-aos-anchor-placement="top-bottom">
+        <div className="divider divider-secondary text-black font-bold">Login Now</div>
       <div className="form-control mt-6">
           <button className="btn btn-outline"><FcGoogle className='text-3xl'></FcGoogle> Continue with Google</button>
         </div>
@@ -31,7 +31,7 @@ const Login = () => {
       <div className="form-control">
           <button className="btn btn-outline bg-gray-700 text-white"><FaGithub className='text-3xl'></FaGithub> Continue with GitHub</button>
         </div>
-        <div className="divider divider-accent">Or</div>
+        <div className="divider divider-accent text-black">Or</div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -47,11 +47,12 @@ const Login = () => {
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
-        <div>
-            <p className='text-black'>You dont have an account Please <span className='text-blue-700 font-bold'> <Link to='/register'>Register</Link></span> </p>
-        </div>
+        
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
+        </div>
+        <div>
+            <p className='text-black'>You dont have an account Please <span className='text-blue-700 font-bold'> <Link to='/register'>Register</Link></span> </p>
         </div>
       </form>
     </div>
