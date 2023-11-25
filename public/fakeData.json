@@ -1,0 +1,144 @@
+[
+    {
+      "id": 1,
+      "title": "Web Development Fundamentals",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Web Development",
+      "description": "Learn the basics of web development, including HTML, CSS, and JavaScript.",
+      "price": 29.99,
+      "enrollmentCount": 120,
+      "teacher": {
+        "name": "John Smith",
+        "email": "john.smith@example.com",
+        "photo": "john_smith_photo.jpg"
+      }
+      
+    },
+    {
+      "id": 2,
+      "title": "Digital Marketing Essentials",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Digital Marketing",
+      "description": "Master the fundamentals of digital marketing strategies and techniques.",
+      "price": 39.99,
+      "enrollmentCount": 85,
+      "teacher": {
+        "name": "Emily Johnson",
+        "email": "emily.johnson@example.com",
+        "photo": "emily_johnson_photo.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Graphic Design for Beginners",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Design",
+      "description": "Explore the principles of graphic design and create stunning visuals.",
+      "price": 24.99,
+      "enrollmentCount": 65,
+      "teacher": {
+        "name": "Sophia Lee",
+        "email": "sophia.lee@example.com",
+        "photo": "sophia_lee_photo.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Data Science with Python",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Data Science",
+      "description": "Dive into the world of data science using the Python programming language.",
+      "price": 49.99,
+      "enrollmentCount": 110,
+      "teacher": {
+        "name": "Daniel Miller",
+        "email": "daniel.miller@example.com",
+        "photo": "daniel_miller_photo.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Mobile App Development with React Native",
+      "category": "Mobile Development",
+      "description": "Build cross-platform mobile apps using React Native and JavaScript.",
+      "image": "web_development_fundamentals.jpg",
+      "price": 44.99,
+      "enrollmentCount": 75,
+      "teacher": {
+        "name": "Olivia Brown",
+        "email": "olivia.brown@example.com",
+        "photo": "olivia_brown_photo.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Introduction to Artificial Intelligence",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Artificial Intelligence",
+      "description": "Get started with the basics of artificial intelligence and machine learning.",
+      "price": 59.99,
+      "enrollmentCount": 95,
+      "teacher": {
+        "name": "Ella Garcia",
+        "email": "ella.garcia@example.com",
+        "photo": "ella_garcia_photo.jpg"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Photography Masterclass",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Photography",
+      "description": "Enhance your photography skills with this comprehensive masterclass.",
+      "price": 34.99,
+      "enrollmentCount": 80,
+      "teacher": {
+        "name": "William Turner",
+        "email": "william.turner@example.com",
+        "photo": "william_turner_photo.jpg"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Business Strategy and Management",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Business",
+      "description": "Develop effective business strategies and management skills.",
+      "price": 54.99,
+      "enrollmentCount": 105,
+      "teacher": {
+        "name": "Ava Robinson",
+        "email": "ava.robinson@example.com",
+        "photo": "ava_robinson_photo.jpg"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Cybersecurity Fundamentals",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Cybersecurity",
+      "description": "Learn the basics of cybersecurity and protect against online threats.",
+      "price": 39.99,
+      "enrollmentCount": 70,
+      "teacher": {
+        "name": "Michael Davis",
+        "email": "michael.davis@example.com",
+        "photo": "michael_davis_photo.jpg"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Creative Writing Workshop",
+      "image": "web_development_fundamentals.jpg",
+      "category": "Writing",
+      "description": "Unleash your creativity with this hands-on creative writing workshop.",
+      "price": 29.99,
+      "enrollmentCount": 88,
+      "teacher": {
+        "name": "Noah White",
+        "email": "noah.white@example.com",
+        "photo": "noah_white_photo.jpg"
+      }
+    }
+  ]
+  
