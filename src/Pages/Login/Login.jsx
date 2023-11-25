@@ -27,7 +27,7 @@ const Login = () => {
       const text = 'Hey Learners Do You Want to Be Skilled Login & Stay With US';
 
     return (
-        <div className='bg-slate-800 text-white pb-32' data-aos="zoom-in">
+        <div className='bg-slate-800 text-white pb-32 pt-40' data-aos="zoom-in">
             <motion.div
       variants={allTextare}
       initial='initial'

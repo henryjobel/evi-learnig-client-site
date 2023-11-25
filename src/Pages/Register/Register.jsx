@@ -26,7 +26,7 @@ const Register = () => {
       const text = 'Get One Free Month of EvoLearn Get More For New Registers';
 
     return (
-        <div className='bg-slate-800 text-white pb-20' data-aos="zoom-in">
+        <div className='bg-slate-800 text-white pb-20 pt-40' data-aos="zoom-in">
             <motion.div
       variants={allTextare}
       initial='initial'

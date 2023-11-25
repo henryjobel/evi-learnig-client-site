@@ -1,6 +1,6 @@
 
 import { Link, NavLink } from 'react-router-dom';
-import logoHr from '../../../assets/ogo-removebg-preview.png'
+import logoHr from '../../../assets/logoS-removebg-preview.png'
 
 const NavBar = () => {
   const navLinks = <>
@@ -12,7 +12,7 @@ const NavBar = () => {
   </>
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar fixed z-10 bg-opacity-60 bg-gray-800 text-white ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,14 +22,14 @@ const NavBar = () => {
         {navLinks}
       </ul>
     </div>
-    <img className='w-[200px]' src={logoHr} alt="" />
+    <img className='w-[200px] lg:ml-64' src={logoHr} alt="" />
   </div>
   <div className="hidden navbar-center lg:flex">
-    <ul className="px-1 menu menu-horizontal">
+    <ul className="px-1 menu menu-horizontal text-base font-bold font-sans text-blue-100">
       {navLinks}
     </ul>
   </div>
-  <div className="navbar-end">
+  <div>
     <button className='btn btn-outline btn-info'><Link to='/login'>login</Link></button>
   </div>
 </div>
