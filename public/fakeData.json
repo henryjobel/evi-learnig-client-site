@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "Web Development Fundamentals",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/NW2CCMZ/Web-Developer-Illustration-Facebook-Post.png",
       "category": "Web Development",
       "description": "Learn the basics of web development, including HTML, CSS, and JavaScript.",
       "price": 29.99,
@@ -17,7 +17,7 @@
     {
       "id": 2,
       "title": "Digital Marketing Essentials",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/k40Zrvv/Web-Developer-Illustration-Facebook-Post-1.png",
       "category": "Digital Marketing",
       "description": "Master the fundamentals of digital marketing strategies and techniques.",
       "price": 39.99,
@@ -31,7 +31,7 @@
     {
       "id": 3,
       "title": "Graphic Design for Beginners",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/YfTKNvD/Web-Developer-Illustration-Facebook-Post-1.png",
       "category": "Design",
       "description": "Explore the principles of graphic design and create stunning visuals.",
       "price": 24.99,
@@ -45,7 +45,7 @@
     {
       "id": 4,
       "title": "Data Science with Python",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/3MNmBZL/Python.png",
       "category": "Data Science",
       "description": "Dive into the world of data science using the Python programming language.",
       "price": 49.99,
@@ -61,7 +61,7 @@
       "title": "Mobile App Development with React Native",
       "category": "Mobile Development",
       "description": "Build cross-platform mobile apps using React Native and JavaScript.",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/dcJQZkG/mobile.png",
       "price": 44.99,
       "enrollmentCount": 75,
       "teacher": {
@@ -73,7 +73,7 @@
     {
       "id": 6,
       "title": "Introduction to Artificial Intelligence",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/FzT2zQm/aibti.png",
       "category": "Artificial Intelligence",
       "description": "Get started with the basics of artificial intelligence and machine learning.",
       "price": 59.99,
@@ -87,7 +87,7 @@
     {
       "id": 7,
       "title": "Photography Masterclass",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/9rVm4kv/photo-Graphy.png",
       "category": "Photography",
       "description": "Enhance your photography skills with this comprehensive masterclass.",
       "price": 34.99,
@@ -101,7 +101,7 @@
     {
       "id": 8,
       "title": "Business Strategy and Management",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/5XZd6Jf/buisness.png",
       "category": "Business",
       "description": "Develop effective business strategies and management skills.",
       "price": 54.99,
@@ -115,7 +115,7 @@
     {
       "id": 9,
       "title": "Cybersecurity Fundamentals",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/3TQPhTf/cyvber.png",
       "category": "Cybersecurity",
       "description": "Learn the basics of cybersecurity and protect against online threats.",
       "price": 39.99,
@@ -129,7 +129,7 @@
     {
       "id": 10,
       "title": "Creative Writing Workshop",
-      "image": "web_development_fundamentals.jpg",
+      "image": "https://i.ibb.co/PcjM3qs/writing.png",
       "category": "Writing",
       "description": "Unleash your creativity with this hands-on creative writing workshop.",
       "price": 29.99,
