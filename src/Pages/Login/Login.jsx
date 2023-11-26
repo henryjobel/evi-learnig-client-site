@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaGithub } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -27,12 +28,13 @@ const Login = () => {
       const text = 'Hey Learners Do You Want to Be Skilled Login & Stay With US';
 
     return (
-        <div className='bg-slate-800 text-white pb-32 pt-40' data-aos="zoom-in">
+        <div className='pt-40 pb-32 text-white bg-slate-800' data-aos="zoom-in">
+          <Helmet><title>Evo Learn || Login</title></Helmet>
             <motion.div
       variants={allTextare}
       initial='initial'
       animate='animate'
-      className='text-center pt-14 pb-10'
+      className='pb-10 text-center pt-14'
     >
       {text.split('').map((char, index) => (
         <motion.span key={index} variants={wordsAre} className={`text-4xl font-bold ${char === ' ' ? 'ml-1' : ''}`}>
@@ -44,25 +46,25 @@ const Login = () => {
       </motion.p>
     </motion.div>
             <div className="hero">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+  <div className="flex-col hero-content lg:flex-row-reverse">
     <div className="text-center lg:text-left" data-aos="zoom-out-down">
       
       <img className='w-[700px]'  src={learnigImg} alt="" />
     </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="w-full max-w-sm shadow-2xl card shrink-0 bg-base-100">
       <form className="card-body"  data-aos="fade-up"
      data-aos-anchor-placement="top-bottom">
-        <div className="divider divider-secondary text-black font-bold">Login Now</div>
-      <div className="form-control mt-6">
+        <div className="font-bold text-black divider divider-secondary">Login Now</div>
+      <div className="mt-6 form-control">
           <button className="btn btn-outline"><FcGoogle className='text-3xl'></FcGoogle> Continue with Google</button>
         </div>
       <div className="form-control">
-          <button className="btn btn-outline bg-blue-500 text-white"><FaFacebook className='text-3xl'></FaFacebook> Continue with Google</button>
+          <button className="text-white bg-blue-500 btn btn-outline"><FaFacebook className='text-3xl'></FaFacebook> Continue with Google</button>
         </div>
       <div className="form-control">
-          <button className="btn btn-outline bg-gray-700 text-white"><FaGithub className='text-3xl'></FaGithub> Continue with GitHub</button>
+          <button className="text-white bg-gray-700 btn btn-outline"><FaGithub className='text-3xl'></FaGithub> Continue with GitHub</button>
         </div>
-        <div className="divider divider-accent text-black">Or</div>
+        <div className="text-black divider divider-accent">Or</div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -79,11 +81,11 @@ const Login = () => {
           </label>
         </div>
         
-        <div className="form-control mt-6">
+        <div className="mt-6 form-control">
           <button className="btn btn-primary">Login</button>
         </div>
         <div>
-            <p className='text-black'>You dont have an account Please <span className='text-blue-700 font-bold'> <Link to='/register'>Register</Link></span> </p>
+            <p className='text-black'>You dont have an account Please <span className='font-bold text-blue-700'> <Link to='/register'>Register</Link></span> </p>
         </div>
       </form>
     </div>

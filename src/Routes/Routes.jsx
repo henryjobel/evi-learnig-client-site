@@ -35,7 +35,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/courseDetails/:id',
-                element:<SeeDetails></SeeDetails>
+                element:<SeeDetails></SeeDetails>,
+                loader:()=> fetch('/fakeData.json')
             }
         ]
     }
