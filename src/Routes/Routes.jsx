@@ -6,6 +6,7 @@ import TechON from './../Pages/TechOn/TechON';
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import SeeDetails from "../Pages/SeeDetails/SeeDetails";
+import Payment from "../Pages/Payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                 path:'/courseDetails/:id',
                 element:<SeeDetails></SeeDetails>,
                 loader:()=> fetch('/fakeData.json')
+            },
+            {
+                path: '/payment',
+                element:<Payment></Payment>
             }
         ]
     }

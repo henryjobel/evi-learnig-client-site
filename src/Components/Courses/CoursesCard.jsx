@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 
 
-const CoursesCard = ({course}) => {
-    const {id,title,description,image,price,enrollmentCount,teacher} = course
+const CoursesCard = ({ course }) => {
+    const { id, title, description, image, price, enrollmentCount, teacher } = course
     return (
         <div className="max-w-sm border border-gray-200 rounded-lg shadow bg-slate-100 dark-bg-gray-800 dark-border-gray-700" data-aos="zoom-in-up">
             <a href="#">
@@ -20,8 +20,8 @@ const CoursesCard = ({course}) => {
                 <h5 className="mb-2 font-bold tracking-tight text-blue-500 text- xl dark-text-white">Price: ${price}</h5>
                 <h5 className="mb-2 font-bold tracking-tight text-green-800 text- xl dark-text-white">Total Enrollment: {enrollmentCount}</h5>
                 <div className="mt-6 form-control">
-          <Link to={`/courseDetails/${id}`} className="btn btn-primary btn-outline">Enroll</Link>
-        </div>
+                    <Link to={`/courseDetails/${id}`} className="btn btn-primary btn-outline">Enroll</Link>
+                </div>
             </div>
         </div>
     );
