@@ -1,23 +1,27 @@
 import React from 'react';
+import { GiTeacher } from "react-icons/gi";
+import { Link } from 'react-router-dom';
+
+
 
 const CoursesCard = ({course}) => {
-    const {_id,title,description,image} = course
+    const {id,title,description,image,price,enrollmentCount,teacher} = course
     return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark-bg-gray-800 dark-border-gray-700" data-aos="zoom-in-up">
+        <div className="max-w-sm border border-gray-200 rounded-lg shadow bg-slate-100 dark-bg-gray-800 dark-border-gray-700" data-aos="zoom-in-up">
             <a href="#">
                 <img className="rounded-t-lg" src={image} alt="" />
             </a>
             <div className="p-5">
                 <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark-text-white">{title}</h5>
+                    <h5 className="mb-2 font-bold tracking-tight text- xl text-zinc-700 dark-text-white"><GiTeacher className='text-4xl text-blue-400'></GiTeacher> Complet the Course With <span className='text-orange-500'>{teacher.name}</span></h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-700 dark-text-gray-400">{description}</p>
-                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus-ring-4 focus-outline-none focus-ring-blue-300 dark-bg-blue-600 dark-hover-bg-blue-700 dark-focus-ring-blue-800">
-                    Enroll
-                    <svg className="rtl-rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <h5 className="mb-2 font-bold tracking-tight text-blue-500 text- xl dark-text-white">Price: ${price}</h5>
+                <h5 className="mb-2 font-bold tracking-tight text-green-800 text- xl dark-text-white">Total Enrollment: {enrollmentCount}</h5>
+                <div className="mt-6 form-control">
+          <Link to={`/courseDetails/${id}`} className="btn btn-primary btn-outline">Enroll</Link>
+        </div>
             </div>
         </div>
     );

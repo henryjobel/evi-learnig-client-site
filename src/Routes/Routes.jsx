@@ -5,6 +5,7 @@ import AllClass from './../Pages/AllClasses/AllClass';
 import TechON from './../Pages/TechOn/TechON';
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import SeeDetails from "../Pages/SeeDetails/SeeDetails";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element:<Register></Register>
+            },
+            {
+                path:'/courseDetails/:id',
+                element:<SeeDetails></SeeDetails>
             }
         ]
     }
