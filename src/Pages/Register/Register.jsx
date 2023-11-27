@@ -1,49 +1,46 @@
 import { motion } from 'framer-motion';
 
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import learningImg from '../../assets/Book-Club-8-480p-4fa264dd-e035-unscreen.gif'
-import useAuth from '../../Hoocks/useAuth';
+
 import SocialLogin from '../Shared/SocialLogin.jsx/SocialLogin';
-import toast from 'react-hot-toast';
+
+import { imageUpload } from '../../api/utils';
+import useAuth from '../../Hoocks/useAuth';
+import { saveUsers } from '../../api/auth';
+
+
 
 const Register = () => {
-  const {createUser} = useAuth()
-  const naviGates = useNavigate();
-  const location = useLocation();
-  const handleRegister =  event =>{
+  const { createUser,updateUserProfile} = useAuth()
+  const handleRegister = async  event =>{
 
     event.preventDefault()
 
     const form = event.target
     const name = form.name.value
-    const photo = form.photo.value
     const email = form.email.value
     const password = form.password.value
-    console.log(name,photo,email,password)
-    createUser(email,password)
-        .then(result => {
-            console.log(result.user)
-            naviGates(location?.state ? location.state: '/login');
-        })
-        .catch(error => {
-            console.log(error)
-        })
-        if(password.length < 6){
-            toast.error("is less than 6 characters")
-            return; 
-        }
-        else if(!/[A-Z]/.test(password)){
-            toast.error("You don't have a capital letter")
-            return;
-        }
-        else if(!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
-            toast.error("You don't have a special character")
-            return;
-        }
-        else{
-            toast.success('Successfully Register')
-            return;
-        }
+    const image =form.image.files[0]
+    
+    try{
+      const imageData = await imageUpload(image)
+      console.log(imageData)
+
+      const res = await createUser(email,password)
+
+      await updateUserProfile(name,imageData?.data?.display_url)
+
+      // todo save data in database
+      const dbRes = await saveUsers(res?.user)
+      console.log(dbRes)
+
+      // todo get token from jwt 
+
+    }catch(error){
+      console.log(error)
+    }
+    console.log(name,email,password)
   }
     const allTextare = {
         initial: { opacity: 0 },
@@ -101,10 +98,16 @@ const Register = () => {
           <input type="text" placeholder="Name" name='name' className="text-black input input-bordered" required />
         </div>
         <div className="form-control">
-          <label className="label">
-            <span className="label-text">PhotoUrl</span>
-          </label>
-          <input type="text" placeholder="photoUrl" name='photo' className="text-black input input-bordered" required />
+        <label htmlFor='image' className='block mb-2 text-sm text-black'>
+                Select Image:
+              </label>
+              <input
+              required
+              id='image'
+              name='image'
+              accept='image/*'
+               type="file"
+                className="file-input file-input-bordered file-input-primary w-full max-w-xs text-black" />
         </div>
         <div className="form-control">
           <label className="label">
