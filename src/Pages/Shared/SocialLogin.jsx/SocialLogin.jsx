@@ -1,5 +1,5 @@
 
-import {  useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 
 import useAuth from "../../../Hoocks/useAuth";
 import { FcGoogle } from "react-icons/fc";
@@ -11,7 +11,9 @@ import toast from "react-hot-toast";
 
 const SocialLogin = () => {
     const {signInWithGoogle} = useAuth();
+    const location = useLocation()
     const naviGates = useNavigate();
+    const from = location.state?.from?.pathname || "/";
     const handlegoogleLogin = async () =>{
       try{
         const res = await signInWithGoogle()
@@ -22,7 +24,7 @@ const SocialLogin = () => {
         // todo get token from jwt 
   
         await getToken(res?.user?.email)
-        naviGates('/')
+        naviGates(from,{ replace : true})
         toast.success('Sing Up Successfully')
   
       }catch(error){

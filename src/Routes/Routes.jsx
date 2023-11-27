@@ -7,6 +7,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import SeeDetails from "../Pages/SeeDetails/SeeDetails";
 import Payment from "../Pages/Payment/Payment";
+import PrivateRoute from './PrivateRoute';
+import { getAllCourses } from "../api/courses";
 
 
 const router = createBrowserRouter([
@@ -36,8 +38,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/courseDetails/:id',
-                element:<SeeDetails></SeeDetails>,
-                loader:()=> fetch('/fakeData.json')
+                element:<PrivateRoute><SeeDetails></SeeDetails></PrivateRoute>,
+                loader:()=> getAllCourses()
             },
             {
                 path: '/payment',

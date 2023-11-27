@@ -1,5 +1,5 @@
 import learnigImg from '../../assets/image-processing20210831-9058--unscreen.gif';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useLocation,useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import useAuth from '../../Hoocks/useAuth';
@@ -10,7 +10,7 @@ import SocialLogin from '../Shared/SocialLogin.jsx/SocialLogin';
 
 const Login = () => {
   const {signIn} = useAuth()
-   
+   const location = useLocation()
     const navigate = useNavigate();
   const handleSubmit = async e =>{
 
@@ -18,6 +18,7 @@ const Login = () => {
     const form = new FormData(e.currentTarget)
     const email = form.get('email')
     const password = form.get('password')
+    const from = location.state?.from?.pathname || "/";
     console.log(email,password)
 
     try{
@@ -28,7 +29,7 @@ const Login = () => {
       console.log(dbRes) 
       // todo get token from jwt
       await getToken(res?.user?.email)
-      navigate('/')
+      navigate(from,{ replace : true})
       toast.success('Login Up Successfully')
     }catch(error){
       console.log(error)

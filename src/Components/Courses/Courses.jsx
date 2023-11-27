@@ -3,6 +3,7 @@ import CoursesCard from './CoursesCard';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Loader from '../../Pages/Shared/Loader/Loader';
+import { getAllCourses } from '../../api/courses';
 
 
 const Courses = () => {
@@ -13,8 +14,7 @@ const Courses = () => {
    
     useEffect(()=>{
         SetLoading(true)
-        fetch('/fakeData.json')
-        .then(res => res.json())
+        getAllCourses()
         .then(data =>{
             
             if(category){
@@ -52,11 +52,11 @@ const Courses = () => {
       if(loding)return<Loader></Loader>
     return (
         <div >
-            {courses && courses.length>0 ? <div className='pt-20 pb-52 grid lg:grid-cols-4 container mx-auto gap-1' data-aos="zoom-in-up">
+            {courses && courses.length>0 ? <div className='container grid gap-1 pt-20 mx-auto pb-52 lg:grid-cols-4' data-aos="zoom-in-up">
             {
                 courses.map(course => 
                 <CoursesCard
-                     key={course.id} 
+                     key={course._id} 
                      course={course}>
 
                 </CoursesCard>)
@@ -67,7 +67,7 @@ const Courses = () => {
       variants={allTextare}
       initial='initial'
       animate='animate'
-      className='text-center pt-14 pb-10'
+      className='pb-10 text-center pt-14'
     >
       {text.split('').map((char, index) => (
         <motion.span key={index} variants={wordsAre} className={`text-4xl font-bold text-white ${char === ' ' ? 'ml-1' : ''}`}>
