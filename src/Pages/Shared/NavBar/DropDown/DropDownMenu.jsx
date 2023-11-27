@@ -7,7 +7,7 @@ import avatarImg from '../../../../assets/download.png'
 
 const DropDownMenu = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const { user } = useAuth()
+    const { user,logOut  } = useAuth()
   
     return (
       <div className='relative'>
@@ -34,23 +34,39 @@ const DropDownMenu = () => {
             <div className='flex flex-col cursor-pointer'>
               <Link
                 to='/'
-                className='block md:hidden px-4 py-3  hover:bg-blue-400 transition font-semibold text-black'
+                className='block px-4 py-3 font-semibold text-black transition md:hidden hover:bg-blue-400'
               >
                 Home
               </Link>
-  
+              {user? 
+              <>
+              <Link
+                to='/dashboard'
+                className='px-4 py-3 font-semibold text-black transition hover:bg-blue-400'
+              >
+                Dashboard
+              </Link>
+              <button onClick={logOut}
+                to='/logout'
+                className='px-4 py-3 font-semibold text-black transition cursor-pointer hover:bg-blue-400'
+              >
+                Logout
+              </button>
+              </> : 
+              <>
               <Link
                 to='/login'
-                className='px-4 py-3 hover:bg-blue-400 transition font-semibold text-black'
+                className='px-4 py-3 font-semibold text-black transition hover:bg-blue-400'
               >
                 Login
               </Link>
               <Link
                 to='/register'
-                className='px-4 py-3 hover:bg-blue-400 transition font-semibold text-black'
+                className='px-4 py-3 font-semibold text-black transition hover:bg-blue-400'
               >
                 Sign Up
               </Link>
+              </>}
             </div>
           </div>
         )}

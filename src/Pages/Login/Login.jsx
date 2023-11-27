@@ -1,40 +1,37 @@
 import learnigImg from '../../assets/image-processing20210831-9058--unscreen.gif';
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook, FaGithub } from "react-icons/fa6";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import useAuth from '../../Hoocks/useAuth';
 import toast from 'react-hot-toast';
+import { getToken, saveUsers } from '../../api/auth';
+import SocialLogin from '../Shared/SocialLogin.jsx/SocialLogin';
 
 
 const Login = () => {
   const {signIn} = useAuth()
-    const location = useLocation();
-    const naviGates = useNavigate();
-  const handleSubmit =  e =>{
+   
+    const navigate = useNavigate();
+  const handleSubmit = async e =>{
 
-    event.preventDefault()
+    e.preventDefault()
     const form = new FormData(e.currentTarget)
     const email = form.get('email')
     const password = form.get('password')
     console.log(email,password)
 
-    signIn(email,password)
-    .then(res => {
-        console.log(res.user)
-        naviGates(location?.state ? location.state: '/');
-    })
-    .catch(error =>{
-        console.log(error)
-    })
-    if(password.length < 6){
-        toast.error('Password Worng')
-        return; 
-    }
-    else{
-        toast.success('Successfully Login')
-        return
+    try{
+      
+      const res = await signIn(email,password)
+      // todo save data in database
+      const dbRes = await saveUsers(res?.user)
+      console.log(dbRes) 
+      // todo get token from jwt
+      await getToken(res?.user?.email)
+      navigate('/')
+      toast.success('Login Up Successfully')
+    }catch(error){
+      console.log(error)
     }
 
 
@@ -89,27 +86,19 @@ const Login = () => {
       <form onSubmit={handleSubmit} className="card-body"  data-aos="fade-up"
      data-aos-anchor-placement="top-bottom">
         <div className="font-bold text-black divider divider-secondary">Login Now</div>
-      <div className="mt-6 form-control">
-          <button className="btn btn-outline"><FcGoogle className='text-3xl'></FcGoogle> Continue with Google</button>
-        </div>
-      <div className="form-control">
-          <button className="text-white bg-blue-500 btn btn-outline"><FaFacebook className='text-3xl'></FaFacebook> Continue with Google</button>
-        </div>
-      <div className="form-control">
-          <button className="text-white bg-gray-700 btn btn-outline"><FaGithub className='text-3xl'></FaGithub> Continue with GitHub</button>
-        </div>
+      <SocialLogin></SocialLogin>
         <div className="text-black divider divider-accent">Or</div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" name='email' className="input input-bordered" required />
+          <input type="email" placeholder="email" name='email' className="input input-bordered"  />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" name='password' className="text-black input input-bordered" required />
+          <input type="password" placeholder="password" name='password' className="text-black input input-bordered"  />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>

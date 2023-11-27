@@ -2,6 +2,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { app } from './../FirBase/firebase.config';
+import { clearToken } from '../api/auth';
 
 
 export const AuthContext = createContext(null)
@@ -32,8 +33,9 @@ const AuthProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email)
   }
 
-  const logOut = () => {
+  const logOut = async () => {
     setLoading(true)
+    await clearToken()
     return signOut(auth)
   }
 

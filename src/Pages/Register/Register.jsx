@@ -1,18 +1,22 @@
 import { motion } from 'framer-motion';
+import { ImSpinner9 } from "react-icons/im";
 
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
 import learningImg from '../../assets/Book-Club-8-480p-4fa264dd-e035-unscreen.gif'
 
 import SocialLogin from '../Shared/SocialLogin.jsx/SocialLogin';
 
 import { imageUpload } from '../../api/utils';
 import useAuth from '../../Hoocks/useAuth';
-import { saveUsers } from '../../api/auth';
+import {  getToken, saveUsers } from '../../api/auth';
+import toast from 'react-hot-toast';
 
 
 
 const Register = () => {
-  const { createUser,updateUserProfile} = useAuth()
+  const { createUser,updateUserProfile,loading} = useAuth()
+  const navigate = useNavigate()
   const handleRegister = async  event =>{
 
     event.preventDefault()
@@ -37,8 +41,13 @@ const Register = () => {
 
       // todo get token from jwt 
 
+      await getToken(res?.user?.email)
+      navigate('/')
+      toast.success('Sing Up Successfully')
+
     }catch(error){
       console.log(error)
+      toast.error(error?.message)
     }
     console.log(name,email,password)
   }
@@ -126,7 +135,7 @@ const Register = () => {
         </div>
         
         <div className="mt-6 form-control">
-          <input className="btn btn-primary" type="submit" value="Register" />
+          <button className="btn btn-primary" type='submit'>{loading?<ImSpinner9 className='animate-spin m-auto'></ImSpinner9>: 'Register'}</button>
         </div>
         <div className="text-black divider divider-accent">Or</div>
         <SocialLogin></SocialLogin>
