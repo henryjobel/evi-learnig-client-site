@@ -1,18 +1,11 @@
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet-async';
 import { GiTeacher } from 'react-icons/gi';
 
 
 const SeeDetails = () => {
-    const { id } = useParams()
-    const idInt = parseInt(id)
-    const details = useLoaderData()
-    const detail = details.find(detail => detail.id === idInt)
-    console.log(detail)
-
-
-
+    const detail = useLoaderData()
     return (
 
         <div className=' pt-36'>

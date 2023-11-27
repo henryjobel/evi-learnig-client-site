@@ -8,7 +8,8 @@ import Register from "../Pages/Register/Register";
 import SeeDetails from "../Pages/SeeDetails/SeeDetails";
 import Payment from "../Pages/Payment/Payment";
 import PrivateRoute from './PrivateRoute';
-import { getAllCourses } from "../api/courses";
+import {  singleCourse } from "../api/courses";
+import DashboardLayout from "../Layout/DashBoardLayout";
 
 
 const router = createBrowserRouter([
@@ -39,14 +40,20 @@ const router = createBrowserRouter([
             {
                 path:'/courseDetails/:id',
                 element:<PrivateRoute><SeeDetails></SeeDetails></PrivateRoute>,
-                loader:()=> getAllCourses()
+                loader:({params})=> singleCourse(params.id)
             },
             {
                 path: '/payment',
                 element:<Payment></Payment>
-            }
+            },
+            
         ]
-    }
+    },
+    {
+        path:'/dashboard',
+        element:<DashboardLayout></DashboardLayout>,
+        children:[{}]
+    },
 ])
 
 
