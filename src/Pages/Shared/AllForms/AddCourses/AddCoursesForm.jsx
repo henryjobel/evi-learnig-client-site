@@ -3,7 +3,7 @@ import SectionTitle from '../../SectionTitle/SectionTitle';
 import { categories } from '../../../../Components/Courses/Categoris/CategorisData';
 import useAuth from '../../../../Hoocks/useAuth';
 
-const AddCoursesForm = ({handleSubmit}) => {
+const AddCoursesForm = ({handleSubmit,imageuplodtext,handleUploadtext}) => {
     const {user} = useAuth()
     return (
         <div>
@@ -100,7 +100,8 @@ const AddCoursesForm = ({handleSubmit}) => {
               <div className='file_upload px-5 py-3 relative border-4 border-dotted border-gray-300 rounded-lg'>
                 <div className='flex flex-col w-max mx-auto text-center'>
                   <label>
-                    <input
+                    <input onChange={e=>handleUploadtext(e.target.files[0])}
+
                       className='text-sm cursor-pointer w-36 hidden'
                       type='file'
                       name='image'
@@ -109,7 +110,7 @@ const AddCoursesForm = ({handleSubmit}) => {
                       hidden
                     />
                     <div className='bg-blue-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-blue-500'>
-                      Upload Image
+                     {imageuplodtext}
                     </div>
                   </label>
                 </div>
@@ -119,10 +120,8 @@ const AddCoursesForm = ({handleSubmit}) => {
         </div>
 
         <button
-          type='submit'
-          className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-blue-500'
-        >
-          
+          type='submit' className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-blue-500'>
+          Add Class
         </button>
       </form>
     </div>

@@ -11,3 +11,16 @@ export const singleCourse = async id =>{
     const {data}= await axiosSecure(`/courses/${id}`)
     return data
 }
+
+// fetch clases for teacher
+ export const teacherCourse = async (email) =>{
+    const {data}= await axiosSecure(`/course/${email}`)
+    return data
+}
+
+
+// save courses data in database
+export const addCourse = async courseData =>{
+    const {data}= await axiosSecure.post('/courses',courseData)
+    return data
+}

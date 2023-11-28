@@ -2,9 +2,15 @@ import { Helmet } from "react-helmet-async";
 import AddCoursesForm from "../../Shared/AllForms/AddCourses/AddCoursesForm";
 import useAuth from "../../../Hoocks/useAuth";
 import { imageUpload } from "../../../api/utils";
+import { useState } from "react";
+import { addCourse } from "../../../api/courses";
+import toast from "react-hot-toast";
+import {  useNavigate } from "react-router-dom";
 
 const AddClass = () => {
     const {user} = useAuth()
+    const [imageuplodtext, setImageuplodtext] = useState('Upload Image')
+    const navigate = useNavigate()
     const handleSubmit = async e =>{
         e.preventDefault()
         const form = e.target
@@ -27,13 +33,31 @@ const AddClass = () => {
             teacher,
             image: image_url?.data?.display_url,
         }
+        try{
+            const data = await addCourse(courseData)
+            console.log(data)
+            toast.success('Courses Add Succesfully')
+            navigate('/dashboard/myclass')
+
+        }catch(error){
+            console.log(error)
+            toast.error(error.message)
+        }
         console.table(courseData)
     }
     
+    const handleUploadtext = image =>{
+        setImageuplodtext(image.name)
+    }
+
     return (
         <div>
             <Helmet>Dashboard || Add Class</Helmet>
-            <AddCoursesForm handleSubmit = {handleSubmit}></AddCoursesForm>
+            <AddCoursesForm
+             handleSubmit = {handleSubmit}
+             handleUploadtext = {handleUploadtext}
+             imageuplodtext = {imageuplodtext}
+             ></AddCoursesForm>
         </div>
     );
 };

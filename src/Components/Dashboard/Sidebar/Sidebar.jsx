@@ -77,6 +77,11 @@ const Sidebar = () => {
                 label='My Classe'
                 address='myclass'
               />
+              <MenuItem
+                icon={MdClass}
+                label='Assingment'
+                address='assigment'
+              />
 
               {/* Menu Items */}
             </nav>
