@@ -6,6 +6,7 @@ import useAuth from '../../Hoocks/useAuth';
 import toast from 'react-hot-toast';
 import { getToken, saveUsers } from '../../api/auth';
 import SocialLogin from '../Shared/SocialLogin.jsx/SocialLogin';
+import NavBar from '../Shared/NavBar/NavBar';
 
 
 const Login = () => {
@@ -60,7 +61,11 @@ const Login = () => {
       const text = 'Hey Learners Do You Want to Be Skilled Login & Stay With US';
 
     return (
-        <div className='pt-40 pb-32 text-white bg-slate-800' data-aos="zoom-in">
+        <div>
+          <div>
+            <NavBar></NavBar>
+          </div>
+          <div className='pt-40 pb-32 text-white bg-slate-800' data-aos="zoom-in">
           <Helmet><title>Evo Learn || Login</title></Helmet>
             <motion.div
       variants={allTextare}
@@ -115,6 +120,7 @@ const Login = () => {
     </div>
   </div>
 </div>
+        </div>
         </div>
     );
 };

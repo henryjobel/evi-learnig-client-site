@@ -6,6 +6,9 @@ import logo from '../../../assets/logoS-removebg-preview.png'
 // Icons
 import { GrLogout } from 'react-icons/gr'
 import { FcSettings } from 'react-icons/fc'
+import { SiGoogleclassroom } from "react-icons/si";
+import { MdClass } from "react-icons/md";
+
 import { AiOutlineBars } from 'react-icons/ai'
 import { BsGraphUp } from 'react-icons/bs'
 import MenuItem from './MenuItem/MenuItem'
@@ -63,6 +66,16 @@ const Sidebar = () => {
                 icon={BsGraphUp}
                 label='Statistics'
                 address='/dashboard'
+              />
+              <MenuItem
+                icon={SiGoogleclassroom }
+                label='Add Classe'
+                address='addclass'
+              />
+              <MenuItem
+                icon={MdClass}
+                label='My Classe'
+                address='myclass'
               />
 
               {/* Menu Items */}
