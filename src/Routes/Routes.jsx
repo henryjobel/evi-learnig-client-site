@@ -74,15 +74,15 @@ const router = createBrowserRouter([
                         </PrivateRoute>
                     },
                     {
-                        path: '/allclass',
+                        path: 'allclass',
                         element:<PrivateRoute><AdminRoute><AllClass></AllClass></AdminRoute></PrivateRoute>
                     },
                     {
-                        path: '/users',
+                        path: 'users',
                         element:<PrivateRoute><AdminRoute><ManageUsers></ManageUsers></AdminRoute></PrivateRoute>
                     },
                     {
-                        path: '/teacherRequst',
+                        path: 'teacherRequst',
                         element:<PrivateRoute><AdminRoute><TeacherRequst></TeacherRequst></AdminRoute></PrivateRoute>
                     },
                 ]
