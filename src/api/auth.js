@@ -24,3 +24,10 @@ export const clearToken = async () =>{
     const {data} = await axiosSecure.get('/logout')
     return data
 }
+
+// get student role from dashboard
+export const studentGetRole = async (email) =>{
+    const {data}= await axiosSecure(`/user/${email}`)
+    return data.role
+    
+}
