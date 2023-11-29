@@ -50,7 +50,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => singleCourse(params.id)
             },
             {
-                path: '/payment',
+                path: 'payment',
                 element: <Payment></Payment>
             },
             {
