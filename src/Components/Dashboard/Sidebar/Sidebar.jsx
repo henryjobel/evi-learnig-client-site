@@ -60,21 +60,21 @@ const Sidebar = () => {
 
           {/* Nav Items */}
           <div className='flex flex-col justify-between flex-1 mt-6'>
-            {/* If a user is host */}
-            <ToggleBtn toggleHandler={toggleHandler} />
+            
+            {role === 'teacher' && <ToggleBtn toggleHandler={toggleHandler} />}
             <nav>
-              <MenuItem
+             {role === 'admin' &&  <MenuItem
                 icon={BsGraphUp}
                 label='Statistics'
                 address='/dashboard'
-              />
+              />}
               {/* admin */}
               {role === 'admin' && <AdminItem></AdminItem>}
               {/* student items */}
               {role === 'student' && <StudentItem></StudentItem>}
               {/* teacher items */}
 
-              {role === 'teacher' && <TeacherItem></TeacherItem>}
+              {role === 'teacher' ? toggle ? <TeacherItem></TeacherItem>:<StudentItem></StudentItem> : ''}
 
               {/* Menu Items */}
             </nav>

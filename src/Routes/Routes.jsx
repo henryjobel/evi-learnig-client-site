@@ -12,6 +12,10 @@ import { singleCourse } from "../api/courses";
 import DashboardLayout from "../Layout/DashBoardLayout";
 import AddClass from "../Pages/Dashboard/Teacher/AddClass";
 import MyClass from "../Pages/Dashboard/Teacher/MyClass";
+import TeacherRout from "./TeacherRout";
+import AdminRoute from './AdminRoute';
+import ManageUsers from './../Pages/Dashboard/Admin/ManageUsers';
+import TeacherRequst from './../Pages/Dashboard/Admin/TeacherRequst';
 
 
 const router = createBrowserRouter([
@@ -54,12 +58,33 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: 'addclass',
-                        element: <PrivateRoute><AddClass></AddClass></PrivateRoute>
+                        element:
+                            <PrivateRoute>
+                                <TeacherRout>
+                                    <AddClass></AddClass>
+                                </TeacherRout>
+                            </PrivateRoute>
                     },
                     {
                         path: 'myclass',
-                        element: <PrivateRoute><MyClass></MyClass></PrivateRoute>
-                    }
+                        element: <PrivateRoute>
+                            <TeacherRout>
+                                <MyClass></MyClass>
+                            </TeacherRout>
+                        </PrivateRoute>
+                    },
+                    {
+                        path: '/allclass',
+                        element:<PrivateRoute><AdminRoute><AllClass></AllClass></AdminRoute></PrivateRoute>
+                    },
+                    {
+                        path: '/users',
+                        element:<PrivateRoute><AdminRoute><ManageUsers></ManageUsers></AdminRoute></PrivateRoute>
+                    },
+                    {
+                        path: '/teacherRequst',
+                        element:<PrivateRoute><AdminRoute><TeacherRequst></TeacherRequst></AdminRoute></PrivateRoute>
+                    },
                 ]
             }
 

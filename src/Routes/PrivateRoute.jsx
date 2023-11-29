@@ -2,6 +2,7 @@
 import { Navigate, useLocation } from "react-router";
 
 import useAuth from "../Hoocks/useAuth";
+import Loader from "../Pages/Shared/Loader/Loader";
 
 
 
@@ -10,7 +11,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if(loading){
-        return <progress className="w-56 progress"></progress>
+        return <Loader></Loader>
     }
 
     if (user) {
