@@ -24,3 +24,8 @@ export const addCourse = async courseData =>{
     const {data}= await axiosSecure.post('/courses',courseData)
     return data
 }
+
+export const getAllFeedBack = async () =>{
+    const {data}= await axiosSecure('/feedback')
+    return data
+}

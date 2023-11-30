@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "courseId": 1,
+      "courseName": "Introduction to Programming",
+      "studentName": "Alice Johnson",
+      "email": "alice@example.com",
+      "feedback": "The course was excellent! I learned a lot and the instructor explained concepts very clearly.",
+      "rating": 5,
+      "date": "2023-03-15",
+      "profilePicture": "https://i.ibb.co/rHpzRzL/images-1.jpg"
+    },
+    {
+      "id": 2,
+      "courseId": 2,
+      "courseName": "Web Development Bootcamp",
+      "studentName": "Bob Smith",
+      "email": "bob@example.com",
+      "feedback": "The bootcamp was intense but rewarding. I feel confident in my web development skills now.",
+      "rating": 4,
+      "date": "2023-03-18",
+      "profilePicture": "https://i.ibb.co/zf2F8Ys/images-2.jpg"
+    },
+    {
+      "id": 3,
+      "courseId": 3,
+      "courseName": "Data Science Fundamentals",
+      "studentName": "Charlie Brown",
+      "email": "charlie@example.com",
+      "feedback": "I enjoyed the hands-on projects. The course content was comprehensive and well-organized.",
+      "rating": 5,
+      "date": "2023-03-20",
+      "profilePicture": "https://i.ibb.co/r0KQ4NJ/passport-photo-asian-female-natural-260nw-692128333.webp"
+    },
+    {
+      "id": 4,
+      "courseId": 4,
+      "courseName": "Graphic Design Essentials",
+      "studentName": "Diana Miller",
+      "email": "diana@example.com",
+      "feedback": "The design exercises were fun, and I gained valuable skills. Highly recommended!",
+      "rating": 4,
+      "date": "2023-03-22",
+      "profilePicture": "https://i.ibb.co/3Fgm873/images.jpg"
+    },
+    {
+      "id": 5,
+      "courseId": 5,
+      "courseName": "Mobile App Development",
+      "studentName": "Ethan Turner",
+      "email": "ethan@example.com",
+      "feedback": "Great course for aspiring app developers. The projects were challenging but rewarding.",
+      "rating": 5,
+      "date": "2023-03-25",
+      "profilePicture": "https://i.ibb.co/gZ9vxpp/360-F-99771374-7-Ss-OAb-Jf-E4chxv-J3sp-Og5-MEOIXdij1-Mg.jpg"
+    }
+  ]
+  

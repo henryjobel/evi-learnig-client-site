@@ -5,6 +5,8 @@ import Sponsers from '../../Components/Sponsers/Sponsers';
 import FeatureSowcase from '../../Components/FeatureSowCase/FeatureSowcase';
 import Pratners from '../../Components/Prateners/Pratners';
 import Howmany from '../../Components/howmay/Howmany';
+import FeedBack from '../../Components/FeedBack/FeedBack';
+import SectionTitle from '../Shared/SectionTitle/SectionTitle';
 
 
 const Home = () => {
@@ -16,6 +18,8 @@ const Home = () => {
             <Sponsers></Sponsers>
             <FeatureSowcase></FeatureSowcase>
             <Howmany></Howmany>
+            <SectionTitle heading="Our StudentS Feed Back" subHeading='FeedBack'></SectionTitle>
+            <FeedBack></FeedBack>
             <Pratners></Pratners>
         </div>
     );
