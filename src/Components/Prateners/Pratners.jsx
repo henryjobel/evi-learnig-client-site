@@ -2,7 +2,7 @@ import React from 'react';
 
 const Pratners = () => {
     return (
-        <div>
+        <div data-aos="zoom-in">
             <section id="testimonies" className="py-20 bg-slate-900">
     <div className="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
 

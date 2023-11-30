@@ -13,7 +13,7 @@ const MenuItem = ({ label, address, icon: Icon }) => {
     >
       <Icon className='w-5 h-5' />
 
-      <span className='mx-4 font-medium'>{label}</span>
+      <span className='mx-4 font-medium' data-aos="zoom-in">{label}</span>
     </NavLink>
   )
 }

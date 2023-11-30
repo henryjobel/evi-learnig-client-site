@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <div>
             <footer>
-    <div className="py-4 text-black">
+    <div className="py-4 text-black bg-purple-500">
       <div className="container px-4 mx-auto">
         <div className="flex flex-wrap justify-between -mx-4">
           <div className="w-full px-4 my-4 xl:w-1/5">
@@ -18,14 +18,14 @@ const Footer = () => {
                       <circle cx="369" cy="286" r="40" fill="#2962FF"></circle>
                     </g>
                     <text fill="white" fontFamily="Nunito-Bold, Nunito" fontSize="512" fontWeight="bold">
-                      <tspan x="654" y="518">Bistro Boss</tspan>
+                      <tspan x="654" y="518">Evo Learning</tspan>
                     </text>
                   </g>
                 </g>
               </svg>
             </a>
             <p className="text-justify">
-            The Community Food Sharing and Surplus Reduction Platform is a dynamic initiative dedicated to minimizing food waste and promoting accessibility to nutritious meals. 
+            The Community Evo Lurning and Surplus Reduction Platform is a dynamic initiative dedicated to minimizing food waste and promoting accessibility to nutritious meals. 
             </p>
           </div>
 
@@ -91,7 +91,7 @@ const Footer = () => {
           <div className="w-full px-4 text-center sm:w-auto sm:text-left">
             Copyright © 2023
             
-            Bistro Boss. All Rights Reserved.
+            Evo Learning. All Rights Reserved.
           </div>
         </div>
       </div>

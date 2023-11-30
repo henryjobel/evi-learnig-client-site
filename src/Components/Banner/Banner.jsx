@@ -52,14 +52,13 @@ const Banner = () => {
                                 <img className="h-full w-full object-cover" src="https://picsum.photos/id/1018/2000" alt="Winding mountain road" />
                             </div>
                             <div
-                                className="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
+                                className="max-w-lg bg-blue-500 md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
 
                                 <div className="flex flex-col p-12 md:px-16">
-                                    <h2 className="text-2xl font-medium uppercase text-green-800 lg:text-4xl">Winding Mountain Road</h2>
+                                    <h2 className="text-2xl font-medium uppercase text-green-800 lg:text-4xl">Digital Marketing Course</h2>
                                     <p className="mt-4">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat.
+                                        Become a Digital Marketing Pro with Our Comprehensive Course
+                                        Are you ready to take your career to new heights in the dynamic world of digital marketing? Join our exclusive Digital Marketing Course and gain the skills and knowledge needed to thrive in the online landscape.
                                     </p>
 
                                     <div className="mt-8">
@@ -84,15 +83,15 @@ const Banner = () => {
                                 className="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
                                 <div className="sm:text-center lg:text-left">
                                     <h1 className="text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl">
-                                        <span className="block xl:inline text-blue-300">Data to enrich your</span>
-                                        <span className="block text-blue-300 xl:inline">online business</span>
+                                        <span className="block xl:inline text-blue-300"></span>
+                                        <span className="block text-blue-300 xl:inline">Cyber Sequrity</span>
                                     </h1>
                                     <p
                                         className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                                        fugiat veniam occaecat fugiat aliqua.
+                                        Join Our Comprehensive Cyber Security Course
+                                        Are you fascinated by the world of cybersecurity? Ready to defend against cyber threats and safeguard digital assets? Enroll in our exclusive Cyber Security Course and embark on a journey to become a skilled cybersecurity professional.
                                     </p>
-                                    
+
                                     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                         <div className="rounded-md shadow">
                                             <a href="#"
@@ -107,13 +106,13 @@ const Banner = () => {
                                             </a>
                                         </div>
                                     </div>
-                
+
                                 </div>
 
                                 <div className="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
                                     <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="" />
                                 </div>
-                                
+
                             </div>
 
                         </section>

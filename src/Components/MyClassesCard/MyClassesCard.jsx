@@ -7,7 +7,7 @@ import { CiEdit } from "react-icons/ci";
 
 
 const MyClassesCard = ({ course }) => {
-    const { title, description, image, price, enrollmentCount, teacher } = course
+    const { title, description, image, price,  teacher } = course
     return (
         <div>
             <div className="max-w-sm border border-gray-200 rounded-lg shadow bg-slate-100 dark-bg-gray-800 dark-border-gray-700" data-aos="zoom-in-up">

@@ -51,7 +51,7 @@ const Courses = () => {
       const text = 'Opps Sorry!  Courses are Not Aviable At the moment';
       if(loding)return<Loader></Loader>
     return (
-        <div >
+        <div data-aos="zoom-in">
             {courses && courses.length>0 ? <div className='container grid gap-1 pt-20 mx-auto pb-52 lg:grid-cols-4' data-aos="zoom-in-up">
             {
                 courses.map(course => 
