@@ -52,7 +52,7 @@ console.log(users);
                   </tr>
                 </thead>
                 <tbody>{
-                    users.map(user => <UserDataRow key={user._id} user = {user}></UserDataRow>)
+                    users.map(user => <UserDataRow key={user._id} user = {user} refetch={refetch}></UserDataRow>)
                     }</tbody>
               </table>
             </div>
