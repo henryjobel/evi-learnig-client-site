@@ -19,6 +19,7 @@ import TeacherRequst from './../Pages/Dashboard/Admin/TeacherRequst';
 import Profile from "../Pages/Dashboard/Common/Profile";
 import StudentRoute from './StudentRoute';
 import MyEnRollClasses from "../Pages/Dashboard/Student/MyEnRollClasses";
+import Statitic from "../Pages/Dashboard/Admin/Statitic";
 
 
 const router = createBrowserRouter([
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
                     {
                         path:'myenrollClass',
                         element:<PrivateRoute><StudentRoute><MyEnRollClasses></MyEnRollClasses></StudentRoute></PrivateRoute>
+                    },
+                    {
+                        path:'statitic',
+                        element:<PrivateRoute><AdminRoute><Statitic></Statitic></AdminRoute></PrivateRoute>
                     }
                 ]
             }

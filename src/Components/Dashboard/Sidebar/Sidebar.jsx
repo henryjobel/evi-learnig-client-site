@@ -66,7 +66,7 @@ const Sidebar = () => {
              {role === 'admin' &&  <MenuItem
                 icon={BsGraphUp}
                 label='Statistics'
-                address='/dashboard'
+                address='/dashboard/statitic'
               />}
               {/* admin */}
               {role === 'admin' && <AdminItem></AdminItem>}

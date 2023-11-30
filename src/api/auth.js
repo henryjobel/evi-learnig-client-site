@@ -37,6 +37,11 @@ export const getAllUsers = async () =>{
     return data
     
 }
+export const getstates = async () =>{
+    const {data}= await axiosSecure(`/admin-stats`)
+    return data
+    
+}
 
 
 export const updateUsers = async ({email,role}) =>{
@@ -50,4 +55,12 @@ export const updateUsers = async ({email,role}) =>{
     return data
 }
 
-
+// becom a teacher
+export const becomeTeacher = async email =>{
+    const currentUser = {
+        email,
+        status: 'Requsted'
+    }
+    const {data} = await axiosSecure.put(`/users/${email}`, currentUser)
+    return data
+}
