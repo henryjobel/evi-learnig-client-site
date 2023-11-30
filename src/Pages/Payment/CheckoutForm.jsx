@@ -1,16 +1,34 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './CheckoutForm.css'
-import useAuth from '../../hooks/useAuth'
-import { ImSpinner9 } from 'react-icons/im'
 
-const CheckoutForm = ({ bookingInfo, closeModal }) => {
+import { ImSpinner9 } from 'react-icons/im'
+import useAuth from './../../Hoocks/useAuth';
+import { createdPymanetIntent, enrolls } from '../../api/enroll';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
+
+const CheckoutForm = ({ studentInfo, closeModal }) => {
   const stripe = useStripe()
   const elements = useElements()
   const { user } = useAuth()
   const [cardError, setCardError] = useState('')
   const [clientSecret, setClientSecret] = useState('')
   const [processing, setProcessing] = useState(false)
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+
+    if(studentInfo.price > 0){
+      createdPymanetIntent({price: studentInfo.price})
+      .then(data =>{
+        console.log(data.clientSecret)
+        setClientSecret(data.clientSecret)
+      })
+    }
+
+  },[studentInfo])
 
   // Create Payment Intent
 
@@ -63,11 +81,25 @@ const CheckoutForm = ({ bookingInfo, closeModal }) => {
       // save payment information to the server
       // Update room status in db
       const paymentInfo = {
-        ...bookingInfo,
+        ...studentInfo,
         transactionId: paymentIntent.id,
         date: new Date(),
       }
+      try{
+        await enrolls(paymentInfo)
+        const text = `purchesed Sucessfully ${paymentIntent.id}`
+        toast.success(text)
+        navigate('/dashboard/myenrollClass')
+      }catch(error){
+        console.log(error);
+        toast.error(error.message)
+      }
+      finally{
+        setProcessing(false)
+      }
 
+
+      
       setProcessing(false)
     }
   }
@@ -107,7 +139,7 @@ const CheckoutForm = ({ bookingInfo, closeModal }) => {
             {processing ? (
               <ImSpinner9 className='m-auto animate-spin' size={24} />
             ) : (
-              `Pay ${bookingInfo.price}$`
+              `Pay ${studentInfo.price}$`
             )}
           </button>
         </div>

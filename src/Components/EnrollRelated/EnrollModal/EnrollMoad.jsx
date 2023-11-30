@@ -1,6 +1,12 @@
 
 import { Dialog, Transition } from '@headlessui/react'
+import { Elements } from '@stripe/react-stripe-js';
 import { Fragment } from 'react'
+import CheckoutForm from './../../../Pages/Payment/CheckoutForm';
+import { loadStripe } from '@stripe/stripe-js';
+loadStripe
+
+const stripePromise = loadStripe("pk_test_51GwbeaINl754AERGy6WB5G8YSGY3WAzomh9rgf39kDbh3gUqhAtLCEuLjl0xRlgCDOOnL9QC5Szgmp8JEveTXFZZ00iogv0t0u")
 
 const EnrollModal = ({ closeModal, isOpen, studentInfo }) => {
   return (
@@ -58,6 +64,9 @@ const EnrollModal = ({ closeModal, isOpen, studentInfo }) => {
                 </div>
                 <hr className='mt-8 ' />
                 {/* Card data form */}
+                <Elements stripe={stripePromise}>
+                    <CheckoutForm studentInfo={studentInfo} closeModal={closeModal}></CheckoutForm>
+                </Elements>
               </Dialog.Panel>
             </Transition.Child>
           </div>
