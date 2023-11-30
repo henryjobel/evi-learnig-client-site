@@ -42,6 +42,11 @@ export const getstates = async () =>{
     return data
     
 }
+export const purchesStates = async () =>{
+    const {data}= await axiosSecure(`/order-stats`)
+    return data
+    
+}
 
 
 export const updateUsers = async ({email,role}) =>{

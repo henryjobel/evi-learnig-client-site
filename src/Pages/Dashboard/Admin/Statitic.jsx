@@ -4,6 +4,7 @@ import { FaBook, FaDollarSign, FaUsers } from 'react-icons/fa';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, PieChart, Pie, Legend } from 'recharts';
 import useAuth from '../../../Hoocks/useAuth';
 import { getstates } from '../../../api/auth';
+import axiosSecure from '../../../api';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -17,11 +18,12 @@ const Statitic = () => {
         queryFn:async () => await getstates()
         
     })
+    
 
     const { data: chartData = [] } = useQuery({
         queryKey: ['order-stats'],
         queryFn: async () => {
-            const res = await secoure.get('/order-stats');
+            const res = await axiosSecure.get('/order-stats');
             return res.data;
         }
     })

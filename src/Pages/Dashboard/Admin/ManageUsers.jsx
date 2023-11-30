@@ -6,10 +6,13 @@ import UserDataRow from './UserDataRow'
 const ManageUsers = () => {
 
     const {data: users = [],refetch} = useQuery({
+    
         queryKey:['users'],
         queryFn:async () => await getAllUsers()
         
+        
     })
+    refetch()
 console.log(users);
   return (
     <>
