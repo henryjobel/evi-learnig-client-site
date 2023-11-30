@@ -16,6 +16,6 @@ export const getMyClass = async (email) =>{
 }
 // admin
 export const mannageClass = async (email) =>{
-    const {data} = await axiosSecure(`/payments/admin?email=${email}`)
+    const {data} = await axiosSecure(`/payment/admin?email=${email}`)
     return data
 }

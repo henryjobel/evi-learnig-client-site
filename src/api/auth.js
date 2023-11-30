@@ -31,3 +31,11 @@ export const studentGetRole = async (email) =>{
     return data.role
     
 }
+// get all users
+export const getAllUsers = async () =>{
+    const {data}= await axiosSecure(`/users`)
+    return data
+    
+}
+
+
