@@ -19,4 +19,4 @@ Evi-Learning is a comprehensive online education platform that empowers learners
 
 - Technologies Used: React for building interactive components, and Tanstack Query for efficient data fetching.
 
-- [Live site](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+- [Live site](https://evo-learning-7107a.web.app/)
