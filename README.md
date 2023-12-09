@@ -1,8 +1,5 @@
-# React + Vite
+# Evo Learning Platfrom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Evi-Learning is a comprehensive online education platform that empowers learners with diverse courses and interactive content. Offering a user-friendly interface, personalized learning paths, and real-time progress tracking, Evi-Learning caters to a wide range of subjects, fostering accessible and engaging education for students of all levels.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Live site](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
